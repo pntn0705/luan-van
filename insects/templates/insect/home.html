@@ -1,0 +1,177 @@
+{% extends 'base_layout.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<div class="header">
+    <h1>Co so du lieu con trung</h1>
+  </div>
+
+  <!-- Photo Grid -->
+  <div class="row">
+    <div class="column" id="column1">
+      {% for rect in rects %}
+      <div class="component">
+        <svg viewbox="0 0 {{ rect.image.image.width }} {{ rect.image.image.height }}">
+          <image xlink:href="{{ rect.image.image.url }}" loading="lazy" />
+          <rect
+            vector-effect="non-scaling-stroke"
+            stroke-alignment="inner"
+            x="{{ rect.x }}"
+            y="{{ rect.y }}"
+            width="{{ rect.width }}"
+            height="{{ rect.height }}"
+            category="/m/015p6"
+            id="img3_box0"
+            fill="none"
+            stroke-width="1.5pt"
+            stroke="#FFFF00"
+            visibility="visible"
+          ></rect>
+        </svg>
+      </div>
+      {% endfor %}
+    </div>
+    <div class="column" id="column2">
+        {% for rect in rects %}
+        <div class="component">
+          <svg viewbox="0 0 {{ rect.image.image.width }} {{ rect.image.image.height }}">
+            <image xlink:href="{{ rect.image.image.url }}" loading="lazy" />
+            <rect
+              vector-effect="non-scaling-stroke"
+              stroke-alignment="inner"
+              x="{{ rect.x }}"
+              y="{{ rect.y }}"
+              width="{{ rect.width }}"
+              height="{{ rect.height }}"
+              category="/m/015p6"
+              id="img3_box0"
+              fill="none"
+              stroke-width="1.5pt"
+              stroke="#FFFF00"
+              visibility="visible"
+            ></rect>
+          </svg>
+        </div>
+        {% endfor %}
+    </div>
+    <div class="column" id="column3">
+        {% for rect in rects %}
+        <div class="component">
+          <svg viewbox="0 0 {{ rect.image.image.width }} {{ rect.image.image.height }}">
+            <image xlink:href="{{ rect.image.image.url }}" loading="lazy" />
+            <rect
+              vector-effect="non-scaling-stroke"
+              stroke-alignment="inner"
+              x="{{ rect.x }}"
+              y="{{ rect.y }}"
+              width="{{ rect.width }}"
+              height="{{ rect.height }}"
+              category="/m/015p6"
+              id="img3_box0"
+              fill="none"
+              stroke-width="1.5pt"
+              stroke="#FFFF00"
+              visibility="visible"
+            ></rect>
+          </svg>
+        </div>
+        {% endfor %}
+    </div>
+    <div class="column" id="column4">
+        {% for rect in rects %}
+        <div class="component">
+          <svg viewbox="0 0 {{ rect.image.image.width }} {{ rect.image.image.height }}">
+            <image xlink:href="{{ rect.image.image.url }}" loading="lazy" />
+            <rect
+              vector-effect="non-scaling-stroke"
+              stroke-alignment="inner"
+              x="{{ rect.x }}"
+              y="{{ rect.y }}"
+              width="{{ rect.width }}"
+              height="{{ rect.height }}"
+              category="/m/015p6"
+              id="img3_box0"
+              fill="none"
+              stroke-width="1.5pt"
+              stroke="#FFFF00"
+              visibility="visible"
+            ></rect>
+          </svg>
+        </div>
+        {% endfor %}
+    </div>
+    <div class="column" id="column5">
+      {% for rect in rects %}
+      <div class="component">
+        <svg viewbox="0 0 {{ rect.image.image.width }} {{ rect.image.image.height }}">
+          <image xlink:href="{{ rect.image.image.url }}" loading="lazy" />
+          <rect
+            vector-effect="non-scaling-stroke"
+            stroke-alignment="inner"
+            x="{{ rect.x }}"
+            y="{{ rect.y }}"
+            width="{{ rect.width }}"
+            height="{{ rect.height }}"
+            category="/m/015p6"
+            id="img3_box0"
+            fill="none"
+            stroke-width="1.5pt"
+            stroke="#FFFF00"
+            visibility="visible"
+          ></rect>
+        </svg>
+      </div>
+      {% endfor %}
+    </div>
+</div>
+{% endblock %}
+
+{% block script %}
+
+<script>
+    
+  
+    const loadMore = () => {
+      console.log("load more");
+      $(window).bind("scroll");
+      let string = `
+        <div class="component">
+            <svg viewBox="0 0 1024 682">
+              <image xlink:href="image/6dc059ecb7153297.jpg" loading="lazy"></image>
+              <rect vector-effect="non-scaling-stroke" stroke-alignment="inner" x="0.0" y="201.830398" width="1024.0" height="681.961808" category="/m/015p6" id="img3_box0" fill="none" stroke-width="1.5pt" stroke="#FFFF00" visibility="visible"></rect>
+            </svg>
+          </div>
+  
+          <div class="component">
+            <svg viewBox="0 0 1024 768">
+              <image xlink:href="image/f443370194c5f693.jpg" loading="lazy"></image>
+              <rect vector-effect="non-scaling-stroke" stroke-alignment="inner" x="214.718464" y="151.350528" width="807.1782400000001" height="517.6734720000001" category="/m/015p6" id="img3_box0" fill="none" stroke-width="1.5pt" stroke="#FFFF00" visibility="visible"></rect>
+            </svg>
+          </div>
+  
+          <div class="component">
+            <svg viewBox="0 0 1024 684">
+              <image xlink:href="image/714c75d57baedbd8.jpg" loading="lazy"></image>
+              <rect vector-effect="non-scaling-stroke" stroke-alignment="inner" x="150.071296" y="177.69909600000003" width="441.72595199999995" height="455.25740400000007" category="/m/015p6" id="img3_box0" fill="none" stroke-width="1.5pt" stroke="#FFFF00" visibility="visible"></rect>
+            </svg>
+          </div>
+      `;
+      $("#column1").append(string);
+      $("#column2").append(string);
+      $("#column3").append(string);
+      $("#column4").append(string);
+      $("#column5").append(string);
+    };
+  
+    $(window).scroll(function () {
+      if (
+        $(window).scrollTop() + $(window).height() >
+        $(document).height() - 100
+      ) {
+        loadMore();
+      }
+    });
+  </script>
+
+{% endblock %}
